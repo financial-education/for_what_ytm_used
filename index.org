@@ -5,17 +5,17 @@
 
 * YTM Gives Us the Bond's Price
 
-Given the YTM and a bond's cash flows, we can calculate the bond's price.  Say a 10-year bond pays an annual \$50 coupon and has a 3\% YTM.  Then the bond's value is (using the present value of an annuity formula):
+Given the YTM and a bond's cash flows, we can calculate the bond's price.  Say a 10-year bond pays an annual \$50 coupon and has a 3% YTM.  Then the bond's value is (using the present value of an annuity formula):
 
-$V_0 = \$50(\frac{1 - \frac{1}{1.03^{10}}}{0.03}) + \frac{\$1000}{1.03^{10}} = \$1170.60$
+$$V_0 = \$50(\frac{1 - \frac{1}{1.03^{10}}}{0.03}) + \frac{\$1000}{1.03^{10}} = \$1170.60$$
 
 * How Do We Get the YTM?
 
 To get the YTM, we solve for the rate which makes the present value of the bond's payments equal to the bond's price. So say a bond's price is \$900 and it pays an \$80 annual coupon for the next 5 years.  Then the YTM is:
 
-$\$900 = \$80(\frac{1 - \frac{1}{(1 + YTM)^{5}}}{YTM}) + \frac{\$1000}{(1+YTM)^{5}}$
+$$\$900 = \$80(\frac{1 - \frac{1}{(1 + YTM)^{5}}}{YTM}) + \frac{\$1000}{(1+YTM)^{5}}$$
 
-We can solve this equation for $YTM$ using methods such as [Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method).  In this case the $YTM = 10.68\%$.
+We can solve this equation for $YTM$ using methods such as [[https://en.wikipedia.org/wiki/Newton%27s_method][Newton-Raphson]].  In this case the /YTM/ = 10.68%.
 
 * Circular?
 
@@ -23,7 +23,7 @@ So we get the bond's price be using the YTM, but we get the YTM by observing the
 
 Seemingly, yes.  What the YTM actually does is quote the bond's return to you.  We quote a bond's return, instead of its price, because it is much more informative.  
 
--  We do not use the YTM to determine how much to pay for a bond (as in [bond valuation](http://www.5minutefinance.org/concepts/an-introduction-to-bond-valuation)).  We can only use it to know what the present price is.
+-  We do not use the YTM to determine how much to pay for a bond ([[https://financial-education.github.io/intro_to_bond_valuation/][as in bond valuation]]).  We can only use it to know what the present price is.
 
 * Why Quote a Bond's Return?
 
@@ -31,18 +31,18 @@ Different 5-year U.S. Treasury Notes, as one example, may each have different pr
 
 For instance, say we have the following three 5-year notes:
 
-- Note A: 30-year bond issued 25 years ago with a 15\% coupon rate.
+- Note A: 30-year bond issued 25 years ago with a 15% coupon rate.
 - Note B: 10-year bond issued 5 years ago with a 9% coupon rate.
-- Note C: 5-year bond issued today with a 1\% coupon rate.
+- Note C: 5-year bond issued today with a 1% coupon rate.
 
-By arbitrage, each bond with have the same 1\% YTM.  So this means the bond prices are:
+By arbitrage, each bond with have the same 1% YTM.  So this means the bond prices are:
 
 - Note A: \$1679.48
 - Note B: \$1388.27
 - Note C: \$1000.00
 
  
-
+#+begin_comment
 <!--- add arbitrage to prove they must all have 1% YTM? -->
 
 <!-- app bleow is not telling the story -->
@@ -63,16 +63,21 @@ By arbitrage, each bond with have the same 1\% YTM.  So this means the bond pric
 ##         })
 ```
 -->
+#+end_comment
+
 
 *  Interactive App
 
 The following app allows you to calculate the bond's price given the *YTM*, or alternatively calculate the *YTM* given the bond's price.  
 
  
+#+begin_export html
+<iframe src="https://ztranche.com/for_what_ytm_used/" height="1000px" width="100%"></iframe> 
+#+end_export
 
 
-*
 
+#+begin_comment
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 #{{{
 sidebarLayout(
@@ -168,6 +173,8 @@ sidebarLayout(
 
 #}}}
 ```
+#+end_comment
+
 
 * So How do You Value a Bond?
 
